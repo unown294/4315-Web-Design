@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Sample Table</title>
+</head>
+
+<body>
+<!-- Table Syntax -->
+	<table border="1">
+		<caption>Fruit Juice Drinks and Meals</caption>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Apple</th>
+				<th>Orange</th>
+				<th>Screwdriver</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Breakfast</td>
+				<td>0</td>
+				<td>1</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Lunch</td>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Dinner</td>
+				<td>0</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Total</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+		</tfoot>
+
+	</table>
+
+<h3>Another example of a table with merged cells</h3>
+
+	<table border="1">
+		<caption>Fruit Juice Drinks and Meals</caption>
+		<thead>
+			<tr>
+				<th rowspan="2" colspan="2"></th>
+				<th colspan="3">Fruit Juice Drink</th>
+			</tr>
+			<tr>
+				<th>Apple</th>
+				<th>Orange</th>
+				<th>Screwdriver</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th rowspan="3">Meal</th>
+				<td>Breakfast</td>
+				<td>0</td>
+				<td>1</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Lunch</td>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Dinner</td>
+				<td>0</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="2">Total</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+		</tfoot>
+
+	</table>
+	
+<!-- Form Syntax -->
+	<br>
+	<h3>Sample Form</h3>
+	<form  method="post" action="http:/uta.edu">
+		<p>
+			<input type="hidden" name="recipient" value="email@mavs.uta.edu" />
+			
+			<p><label>Name:</label></p>
+			<input type="text" name="name" size="20" />	
+			
+			<p><label>Comments:</label></p>
+			<textarea name="comments" row="4" cols="30" ></textarea>
+
+			<p><label>Email Address:</label></p>
+			<input type="password" name=”email” size="25" >
+					
+			<p><label>Site design (check if you liked it)<input type="checkbox" name="liked" value="Design"></label></p>
+			
+			<p><label>Search engine:</label></p>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="access" value="Search">Mozilla<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="access" value="Search">Opera<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="access" value="Search">Safari<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="access" value="Search">Internet Explorer<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="access" value="Search">Chrome<br>
+
+			<p><label>Website Rating:</label>
+			<select name="rating">
+					<option selected>Amazing</option>
+					<option>Good</option>
+					<option>Bad</option>
+					<option>Terrible</option>
+			</select>
+			</p>
+	
+			<input type="submit" value="Submit">
+			<input type="reset" value="Clear">
+	</form>
+
+</body>
+
+</html>
