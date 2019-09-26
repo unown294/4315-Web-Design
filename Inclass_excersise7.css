@@ -1,0 +1,10 @@
+﻿	   body	 { background-image:url('marblebeige.jpg')}
+	   span  { font-weight:bold;}
+	   em    { font-weight: bold; Color: black;font-family:Arial, sans-serif}
+	   h1	 { font-family: Tahoma, Helvetica, sans-serif;text-align:center;color:#0000FF}
+	   p	 { font-size: 12pt; font-family: arial, sans-serif;color:#FF0000}
+	   th 	 { color:black; background-image:url('bluestone2.jpg')}
+	   table { font-family:Arial, sans-serif;float:right}
+	   td#local {background-image:url('redstone.jpg');color:lime;font-weight:bold}
+	   caption {font-family:Arial, sans-serif; font-weight:bold}
+	   img#portrait {float:left;}
