@@ -1,0 +1,14 @@
+/* Fig. 12.17: style.css */
+/* CSS for coverviewer.html. */
+#thumbs   { 
+    width: 192px;
+    height: 370px;
+    padding: 5px;
+    text-align: center; }
+#mainimg {
+    width: 289px;
+    padding: 5px;
+    text-align: center;
+    }
+#imgCover { height: 373px; }
+img       { border: 1px solid black; }

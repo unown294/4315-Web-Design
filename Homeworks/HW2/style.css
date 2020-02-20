@@ -1,0 +1,49 @@
+﻿	   body	 { font-family:Arial, Helvetica, sans-serif; padding: 5px; background-color: gray}
+	   span  { font-weight:bold}
+	   em    { font-weight: bold; Color: black;font-family:Arial, sans-serif}
+	   h1	 { font-weight: bold; border-bottom:medium black solid;}
+	   h2 	 { font-weight:bold; font-style:italic}
+	   .title { font-weight:bold; padding: 5px; margin: 0px; border: thin white solid; background-color:blue; color:white; text-transform: uppercase;}
+	   p	 { font-size: 0.9em;}
+	   img {margin:5px;}
+       q {
+            float:right;
+            font-style:italic;
+            font-size:large;
+       }
+       
+       .remove {
+           text-decoration-line: none;
+       }
+	   
+		/* Various Classes to get the desired looks */
+		.margin { margin: 5px}	   
+	   
+	   
+	   
+	   /* Create two equal columns that floats next to each other */
+	   .row {width:735px; background-color: white; padding:5px;}
+	   .column { float: left; width: 50%;}
+	   .leftimage {width: 470px; padding:0px; margin-right:5px;}
+	   .left   { width: 465px; border:thin blue solid; margin:5px; padding-left:5px;}
+	   .right { position:absolute; left:496px; width: 240px; margin: 5px; padding: 5px}
+       .table { border: thin blue solid; padding:5px}
+	   .imagesright {width: 240px; margin: 5px; float: right; border: none}
+
+       /* Clear floats after the columns */
+	   .row:after { content: ""; display: table; clear: both;}
+
+       /*Pull Quote Syntax*/
+        .pquote {
+            float: right;
+            width: 150px;
+            font-style:italic;
+            padding: 2px;
+            margin: 15px;
+            font-size:large;
+        }
+
+        blockquote {
+            margin: 0; /* gets rid of the default blockquote margin */
+            float:right;
+        }

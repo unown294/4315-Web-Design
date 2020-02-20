@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>HW3 Dalton Redman</title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" />-->
+
+    <script type="text/javascript">
+        var i = 1;
+
+        function display(t) {
+            document.getElementById("imgCover").src = "fullsize/" + t + ".jpg";
+            document.getElementById('msg').innerHTML = "This is the " + Name(t) + ".";
+        }
+
+        function Name(t) {
+            if (t == 'FrenchQuarter') {
+                return 'French Quarter'
+            }
+            else if (t == 'GoldenGateBridge') {
+                return 'Golden Gate Bridge'
+            }
+            else if (t == 'NazarethBay') {
+                return 'Nazareth Bay'
+            }
+            else if (t == 'TheAlamo') {
+                return 'The Alamo'
+            }
+            else {
+                return 'Invalid Image name'
+            }
+        }
+
+        //Functional DO NOT TOUCH
+        function displayNextImage() {
+            i++;
+
+            document.getElementById("Ads").src = "ads/banner" + i + ".gif";
+
+            if (i == 4) {
+                i = 0;
+            }
+        }
+
+
+        function startTimer() {
+            setInterval(displayNextImage, 3000);
+            document.getElementById("msg").innerHTML = "Move your mouse over one of the icons to see an enlarged image";
+        }
+
+        function placeholder() {
+            document.getElementById("imgCover").src = "thumbs/placeholder.jpg";
+            document.getElementById("msg").innerHTML = "Move your mouse over one of the icons to see an enlarged image";
+        }
+
+    </script>
+</head>
+<body onload="startTimer()">
+    <div id="adImage">
+        <img id="Ads" src="ads/banner1.gif"
+             alt="Full cover image">
+    </div>
+    <div id="thumbs">
+        <img src="thumbs/FrenchQuarter_small.jpg" id="FrenchQuarter"
+             alt="Java How to Program cover" onmouseover="display('FrenchQuarter')" onmouseout="placeholder()">
+        <img src="thumbs/GoldenGateBridge_small.jpg" id="GoldenGateBridge"
+             alt="Internet & World Wide Web How to Program cover" onmouseover="display('GoldenGateBridge')" onmouseout="placeholder()">
+        <img src="thumbs/NazarethBay_small.jpg" id="NazarethBay"
+             alt="C++ How to Program cover" onmouseover="display('NazarethBay')" onmouseout="placeholder()">
+        <img src="thumbs/TheAlamo_small.jpg" id="TheAlamo"
+             alt="Java How to Program LOV cover" onmouseover="display('TheAlamo')" onmouseout="placeholder()">
+    </div>
+    <div id="mainimg">
+        <img id="imgCover" src="fullsize/TheAlamo.jpg"
+             alt="Full cover image">
+    </div>
+    <p id="msg" style="color:blue">Test</p>
+</body>
+</html>
