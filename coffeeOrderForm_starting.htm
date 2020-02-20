@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<!-- nochange.html
+     This document illustrates using the focus event
+     to prevent the user from changing a text field
+     -->
+<html>
+  <head> <title> The focus event </title>
+
+    <script>
+        function compCost() {
+
+            //Inputs
+            var amount_french = document.getElementById("french").value;
+            var amount_hazlenut = document.getElementById("hazlenut").value;
+            var amount_columbian = document.getElementById("columbian").value;
+
+            //Fixed rates
+            var cost_french = 3.49;     //Dollar amount
+            var cost_hazlenut = 3.95;   //Dollar amount
+            var cost_columbian = 4.59;  //Dollar amount
+
+            //Exception handling
+            if (isNaN(amount_french)) {
+                amount_french = 0;
+            }
+            if (isNaN(amount_hazlenut)) {
+                amount_hazlenut = 0;
+            }
+            if (isNaN(amount_columbian)) {
+                amount_columbian = 0;
+            }
+
+            //Calculate the total amount
+            var total_amount = (cost_french * amount_french) + (cost_hazlenut * amount_hazlenut) + (cost_columbian * amount_columbian);
+
+            //Input the value into the Cost box to the left of the total cost button
+            document.getElementById("cost").value = "$" + total_amount.toFixed(2);
+        }
+    </script>
+  </head>
+  
+  <body>
+    <form action = "">
+      <h3> Coffee Order Form </h3>
+<!-- A bordered table for item orders -->
+<table border = "border">
+<!-- First, the column headings --> 
+       <tr>
+          <th> Product Name </th>
+          <th> Price </th>
+          <th> Quantity </th>
+        </tr>
+<!-- Now, the table data entries -->
+        <tr>
+          <th> French Vanilla (1 lb.) </th>
+          <td> $3.49 </td>
+          <td> <input type = "text"  id = "french" size ="2"> </td>
+        </tr>
+        <tr>
+          <th> Hazlenut Cream (1 lb.) </th>
+          <td> $3.95 </td>
+          <td> <input type = "text"  id = "hazlenut" size = "2"> </td>
+        </tr> 
+        <tr>
+          <th> Columbian (1 lb.) </th>
+          <td> $4.59 </td>
+          <td> <input type = "text"  id = "columbian" size = "2"></td>
+        </tr>
+      </table>
+<!-- Button for precomputation of the total cost -->
+      <p>
+        <input type = "button"  value = "Total Cost" onclick="compCost()">
+        <input type = "text"  size = "5"  id = "cost" onfocus="this.blur()">
+      </p>
+      <p>
+
+      </p>
+<!-- The submit and reset buttons -->
+<p>
+        <input type = "submit"  value = "Submit Order"> 
+        <input type = "reset"  value = "Clear Order Form">
+      </p>
+
+        <p id="debug"></p>
+    </form>
+  </body>
+</html>

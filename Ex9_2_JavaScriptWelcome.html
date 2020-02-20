@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Example 8</title>
+    <script type="text/javascript">
+        <!--
+        //Show a greeting message
+        var msg = "Welcome to JavaScript programming!";
+        document.write("<h1 style='color:red'>");
+        //document.write("Welcome to JavaScript Programming!</h1>");
+        document.write(msg+"</h1>");
+
+        //Recieve two integers and show the quotient and remainder
+        var x = window.prompt("Please enter an integer:");
+        x = parseInt(x);
+        var y = parseInt(prompt("Please enter another integer: "));
+        var q = Math.floor(x / y);
+        var r = x - q * y;
+
+        document.write("<h2>This is the beginning of Excersise 1</h2>");
+        document.write("<p>The value you entered is: ");
+        document.write(x + "</p>");
+
+        document.write("<p>After some calculations, the value you entered is: ");
+        document.write(q + "</p>");
+
+        document.write("<p>After some additional calculations, the remainder is now: ");
+        document.write(r + "</p>");
+
+        document.write("The quotient and remainder of (" + x + " / " + y + ") is " + q + " and " + r + ", Respectively.</p>");
+
+        document.write("<h2>Beginning of Excersise 2</h2>");
+
+        x = window.prompt("Please enter a float");
+        x = parseFloat(x);
+        y = parseFloat(prompt("Please enter another float"));
+        document.write("The quotient and remainder of (" + x + " / " + y + ") is " + (x/y).toFixed(2) + " and " + r + ", Respectively.</p>");
+
+
+        //-->
+    </script>
+</head>
+<body>
+
+</body>
+</html>

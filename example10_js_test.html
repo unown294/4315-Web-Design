@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Excersise 10</title>
+
+    <script type="text/javascript">
+        //Debug mode
+        var debugMode = 0; //Change to 1 to indicate debugmode to the webpage
+
+        var msg = "Welcome to JavaScript programming!";
+        document.write("<h1 style='color:red'>");
+        //document.write("Welcome to JavaScript Programming!</h1>");
+        document.write(msg + "</h1>");
+
+        /*
+        var x = window.prompt("Please enter an integer:");
+        x = parseInt(x);
+        var y = parseInt(prompt("Please enter another integer: "));
+        var q = Math.floor(x / y);
+        var r = x - q * y;
+
+        document.write("<h2>This is the beginning of Excersise 1</h2>");
+        document.write("<p>The value you entered is: ");
+        document.write(x + "</p>");
+
+        document.write("<p>After some calculations, the value you entered is: ");
+        document.write(q + "</p>");
+
+        document.write("<p>After some additional calculations, the remainder is now: ");
+        document.write(r + "</p>");
+
+        document.write("The quotient and remainder of (" + x + " / " + y + ") is " + q + " and " + r + ", Respectively.</p>");
+        */
+
+        //Exercise 2 Code
+
+        var x = window.prompt("Please enter an integer");
+        x = parseInt(x);
+        //handle exception not being an integer
+        if (isNaN(x)) {
+            x = 1;
+            document.write("<p>The x value was indicated to not be an integer and the value " + x + " has been used instead</p>");
+        }
+
+        var y = parseInt(prompt("Please enter another integer"));
+        //handle exception not being an integer
+        if (isNaN(y)) {
+            y = 1;
+            document.write("<p>The y value was indicated to not be an integer and the value " + y + " has been used instead</p>");
+        }
+
+        if (!(isNaN(x)) && !(isNaN(y))){
+            alert("The sum of " + x + " and " + y + " is " + (x + y) + ".\nThe product of " + x + " and " + y + " is " + (x * y) + ".");
+        }
+
+        //Exercise 3 code
+        var name = prompt("Please enter your name.");
+        document.write("<p>How are you doing, " + name + "?</p>");
+
+        //Inclass Exercise 1 (Date/Time identifier)
+
+        //Get the current hours
+        var currentTime = new Date();
+        var hour = currentTime.getHours();
+
+        //For debugging only
+
+        if (debugMode == 1) {
+            document.write("Hour value is : " + hour);
+        }
+
+        if (hour >= 0 && hour < 12) {
+            document.write("<p>Good Morning, " + name + "!</p>");
+        }
+        else if (hour >= 12 && hour <= 18) {
+            document.write("<p>Good Afternoon, " + name + "!</p>");
+        }
+        else if (hour > 18 && hour <= 23) {
+            document.write("<p>Good Evening, " + name + "!</p>");
+        }
+        else {
+            document.write("<p>You done broke the space time continuum, you shall pay for your crimes</p>");
+        }
+
+        //Exercise 2 (grade converter)
+        var grade = parseInt(prompt("Please enter a desired grade"));
+        var letterGrade;
+
+        if (debugMode == 1) {
+            document.write("letterGrade value: " + grade);
+        }
+
+        while (true) {
+            if (grade >= 0 && grade <= 59) {
+                letterGrade = "F";
+            }
+            else if (grade >= 60 && grade <= 69) {
+                letterGrade = "D";
+            }
+            else if (grade >= 70 && grade <= 79) {
+                letterGrade = "C";
+            }
+            else if (grade >= 80 && grade <= 89) {
+                letterGrade = "B";
+            }
+            else if (grade >= 90 && grade <= 100) {
+                letterGrade = "A";
+            }
+
+            break;
+        }
+
+        document.write("<p>The grade you got is an " + letterGrade + ".</p>");
+
+        //Excercise 3 (Multiple grades)
+
+        var gradeList = [];
+        var gradeValue;
+        var total = 0;
+        var average = 0;
+
+        //Gets the grades from user
+        for (i = 0; i < 10; i++){
+            gradeValue = (parseInt(prompt("Please enter the [" + (i + 1) + "] grade now.")));
+            gradeList.push(gradeValue);
+        }
+
+        if (debugMode == 1) {
+            for (i = 0; i < gradeList.length; i++) {
+                document.write(gradeList[i] + ",");
+            }
+        }
+
+
+        //Converts the numbers to letter grades
+        for (i = 0; i < gradeList.length; i++) {
+            if (gradeList[i] >= 0 && gradeList[i] <= 59) {
+                document.write("F,");
+            }
+            else if (gradeList[i] >= 60 && gradeList[i] <= 69) {
+                document.write("D,");
+            }
+            else if (gradeList[i] >= 70 && gradeList[i] <= 79) {
+                document.write("C,");
+            }
+            else if (gradeList[i] >= 80 && gradeList[i] <= 89) {
+                document.write("B,");
+            }
+            else if (gradeList[i] >= 90 && gradeList[i] <= 100) {
+                document.write("A,");
+            }
+        
+        }
+
+        if (debugMode == 1) {
+            document.write("<p>The total of your grade is " + total + ".</p>");
+        }
+        if (debugMode == 1) {
+            for (i = 0; i < gradeList.length; i++) {
+                document.write(gradeList[i] + ",");
+            }
+        }
+
+        //Calculates the total to obtain the average
+        for (i = 0; i < gradeList.length; i++) {
+            total = total + gradeList[i];
+        }
+
+        average = total / gradeList.length;
+
+        document.write("<p>The Average of your grade is " + average + ".</p>");
+        
+
+    </script>
+</head>
+<body>
+    <p>This is a benchmark message</p>
+</body>
+</html>

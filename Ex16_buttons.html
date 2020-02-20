@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript DOM to change CSS designs</title>
+    <script>
+        function change(s) {
+            document.body.style.backgroundColor = s;
+        }
+    </script>
+</head>
+<body>
+    <h1>Click on a button to change the background color of this webpage</h1>
+    <form method="post" action="">
+        <input type="button" value="Blue" id="blue" onclick="change('blue')"/>
+        <input type="button" value="Yellow" id="yellow" onclick="change('yellow')"/>
+        <input type="button" value="Green" id="green" onclick="change('green')"/>
+        <input type="button" value="Red" id="red" onclick="change('red')"/>
+    </form>
+</body>
+</html>

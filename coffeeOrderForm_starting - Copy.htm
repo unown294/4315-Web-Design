@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<!-- nochange.html
+     This document illustrates using the focus event
+     to prevent the user from changing a text field
+     -->
+<html>
+  <head> <title> The focus event </title>
+
+    <script>
+        function compCost() {
+             var qf, qh, qc;
+             var pf = 3.49, ph = 3.95, pc = 4.59; 
+             var total; 
+ 
+             //read the quantity inputs
+             qf = document.getElementById("french").value; 
+                 if(isNaN(qf)) qf=0; 
+             qh = parseFloat(document.getElementById("hazlenut").value); 
+                 if(isNaN(qh)) qh=0; 
+             qc = parseFloat(document.getElementById("columbian").value); 
+                 if(isNaN(qc)) qc=0; 
+             //compute the total cost
+                 total = pf*qf + ph*qh + pc*qc; 
+ 
+             //output the result 
+                 document.getElementById("cost").value = "$" +total.toFixed(2); 
+ 
+ }  
+
+    </script>
+  </head>
+  
+  <body>
+    <form action = "">
+      <h3> Coffee Order Form </h3>
+<!-- A bordered table for item orders -->
+<table border = "border">
+<!-- First, the column headings --> 
+       <tr>
+          <th> Product Name </th>
+          <th> Price </th>
+          <th> Quantity </th>
+        </tr>
+<!-- Now, the table data entries -->
+        <tr>
+          <th> French Vanilla (1 lb.) </th>
+          <td> $3.49 </td>
+          <td> <input type = "text"  id = "french" size ="2"> </td>
+        </tr>
+        <tr>
+          <th> Hazlenut Cream (1 lb.) </th>
+          <td> $3.95 </td>
+          <td> <input type = "text"  id = "hazlenut" size = "2"> </td>
+        </tr> 
+        <tr>
+          <th> Columbian (1 lb.) </th>
+          <td> $4.59 </td>
+          <td> <input type = "text"  id = "columbian" size = "2"></td>
+        </tr>
+      </table>
+<!-- Button for precomputation of the total cost -->
+      <p>
+        <input type = "button"  value = "Total Cost" onclick="compCost()">
+        <input type = "text"  size = "5"  id = "cost" onfocus="this.blur()">
+      </p>
+      <p>
+
+      </p>
+<!-- The submit and reset buttons -->
+<p>
+        <input type = "submit"  value = "Submit Order"> 
+        <input type = "reset"  value = "Clear Order Form">
+      </p>
+
+        <p id="debug"></p>
+    </form>
+  </body>
+</html>

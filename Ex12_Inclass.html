@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //Debug mode
+        var debugMode = 0; //Change to 1 to indicate debugmode to the webpage
+
+        document.write("<h1>Excersise 2 Response</h1>");
+
+        var gradeNoBound = [];
+        gradeValue = 0;
+        var counter = 1;
+        total = 0;
+
+        while (gradeValue >= 0) {
+            gradeValue = parseInt(prompt("Please enter the [" + counter + "] grade value (Enter a negative grade to exit)"));
+            if (gradeValue >= 0) {
+                gradeNoBound.push(gradeValue);
+            }
+            else if (gradeValue < 0 || isNan(gradeValue)) {
+                break;
+            }
+            counter++;
+        }
+
+        //Calls the functions to convert
+        gradeConverter();
+
+        function gradeConverter() {
+            //Converts the numbers to letter grades
+            for (i = 0; i < gradeNoBound.length; i++) {
+                if (gradeNoBound[i] >= 0 && gradeNoBound[i] <= 59) {
+                    document.write("F,");
+                }
+                else if (gradeNoBound[i] >= 60 && gradeNoBound[i] <= 69) {
+                    document.write("D,");
+                }
+                else if (gradeNoBound[i] >= 70 && gradeNoBound[i] <= 79) {
+                    document.write("C,");
+                }
+                else if (gradeNoBound[i] >= 80 && gradeNoBound[i] <= 89) {
+                    document.write("B,");
+                }
+                else if (gradeNoBound[i] >= 90 && gradeNoBound[i] <= 100) {
+                    document.write("A,");
+                }
+
+            }
+
+            if (debugMode == 1) {
+                document.write("<p>The total of your grade is " + total + ".</p>");
+            }
+            if (debugMode == 1) {
+                for (i = 0; i < gradeNoBound.length; i++) {
+                    document.write(gradeNoBound[i] + ",");
+                }
+            }
+        }
+            //Calculates the total to obtain the average
+            for (i = 0; i < gradeNoBound.length; i++) {
+                total = total + gradeNoBound[i];
+            }
+
+            average = total / gradeNoBound.length;
+
+            document.write("<p>The Average of your grade is " + average + ".</p>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

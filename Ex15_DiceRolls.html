@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dice Rolls</title>
+
+    <script type="text/javascript">
+        var DiceFace = [1, 2, 3, 4, 5, 6];
+        var faceCount = [0, 0, 0, 0, 0, 0, 0];
+        var trial = 1000;
+
+        /* Doesnt work and creates and infinite loop
+         
+        //Runs a while loop until the test case has been sufficed
+        for (var i = 0; i < 1000; i++) {
+            for (var i = 0; i < DiceFace.length; i++) {
+                test = Math.floor(Math.random() * 6) + 1;
+
+
+                if (test == DiceFace[i]) {
+                    countPerRoll[i] = countPerRoll[i] + 1;
+                }
+            }
+        }
+        */
+
+        for (var i = 0; i < trial; i++) {
+            faceCount[Math.floor(Math.random() * 6) + 1]++;
+        }
+
+        outputArray(faceCount, trial);
+
+        //Creating the table
+        function outputArray(myArray, trial) {
+            var sum = 0;   
+            document.write("<table border='1'><tr><th>Dice Face</th><th>Count</th></tr><tr><td>Trail Test</td><td>"+trial+"</td></tr>");
+            for (var i = 1; i < myArray.length; i++) {
+                document.write("<tr><td>" + i + "</td><td>" + myArray[i] + "</td></tr>");
+                sum += myArray[i];
+            }
+
+            document.write("<tr><td>Sum</td><td>" + sum + "</td></tr>");
+            document.write("</table>");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

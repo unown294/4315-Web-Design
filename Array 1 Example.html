@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Array 1</title>
+
+    <style type="text/css">
+        table,tr,td {border:solid;}
+    </style>
+
+    <script>
+        var myArray = [10, 20, 30, 40, 50];
+        var sum = 0;   
+        document.write("<table><tr><th>Index</th><th>Value</th></tr>");
+        for (var i = 0; i < myArray.length; i++) {
+            document.write("<tr><td>" + i + "</td><td>" + myArray[i] + "</td></tr>");
+            sum += myArray[i];
+        }
+
+        document.write("<tr><td>Sum</td><td>" + sum + "</td></tr>");
+        document.write("</table>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

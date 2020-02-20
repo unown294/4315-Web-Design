@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript DOM to change CSS designs</title>
+    <script>
+        function change(s) {
+            document.body.style.backgroundColor = s;
+        }
+
+        function toggle() {
+            if (document.getElementById("secret").style.display == "none") {
+                document.getElementById("secret").style.display = "block";
+                document.getElementById("secret1").style.visibility = "visible";
+                document.getElementById("secret2").style.visibility = "visible";
+            }
+            //document.getElementById("secret").style.display = "inline";
+            else {
+                document.getElementById("secret").style.display = "none";
+                document.getElementById("secret1").style.visibility = "hidden";
+                document.getElementById("secret2").style.visibility = "hidden";
+            }
+
+        }
+        /*function hide() {
+            document.getElementById("secret").style.display = "none";
+            document.getElementById("secret1").style.visibility = "hidden";
+            document.getElementById("secret2").style.visibility = "hidden";
+        }*/
+
+    </script>
+</head>
+<body>
+    <h1>Click on a button to change the background color of this webpage</h1>
+    <form method="post" action="">
+        <input type="button" value="Blue" id="blue" onclick="change('blue')" />
+        <input type="button" value="Yellow" id="yellow" onmouseover="change('yellow')" onmouseout="change('white')" />
+        <input type="button" value="Green" id="green" onfocus="change('green')" />
+        <input type="button" value="Red" id="red" onclick="change('red')" />
+
+
+    </form>
+
+    <h2>A toggle button to show or hide a message.</h2>
+    <input type="button" value="Show/hide the hidden message" id="toggle" onclick="toggle()" />
+    <br />
+
+    <p id="secret" style="color:red;font-weight:bold;display:none;">This is the biggest secret. Secret Documents disclosed here</p>
+    <p>This is a benchmark line</p>
+    <p id="secret1" style="color:red;font-weight:bold;visibility:hidden">This is the biggest secret. Secret Documents disclosed here</p>
+    <img id="secret2" src="images/It_Just_works.jpg" style="visibility:hidden" />
+
+
+</body>
+</html>

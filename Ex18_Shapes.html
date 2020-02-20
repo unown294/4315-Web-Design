@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ex18 Shapes</title>
+
+    <script type="text/javascript">
+        function addText(s) {
+            document.getElementById('msg').innerHTML = "This is a " + s + ".";
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>Move the mouse over each shape to show the corresponding label.</h1>
+    <img src="images\shapes.jpg" alt="shapes" usemap="#nameOfShape" />
+    <map name="nameOfShape">
+        <area shape="circle" coords="58,50,40" alt="circle" href="http://uta.edu"
+              onmouseover="addText('circle');" onmouseout="addText('background');">
+        <area shape="rect" coords="136,11,227,89" alt="rectangle"
+              onmouseover="addText('rectangle')" onmouseout="addText('background');" />
+        <area shape="poly" coords="309,13,358,89,257,89" alt="triangle"
+              onmouseover="addText('triangle')" onmouseout="addText('background');" />
+    </map>
+    <p id="msg"></p>
+</body>
+</html>

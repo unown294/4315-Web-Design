@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Excersise 11</title>
+    <script type="text/javascript">
+        //Debug mode
+        var debugMode = 0; //Change to 1 to indicate debugmode to the webpage
+
+        document.write("<h1>Excersise 2 Response</h1>")
+
+        //Exercise 2 (grade converter)
+        var grade = parseInt(prompt("Please enter a desired grade"));
+        var letterGrade;
+        var gradeNumber = true;
+
+        if (debugMode == 1) {
+            document.write("letterGrade value: " + grade);
+        }
+
+        if (isNaN(grade)) {
+            document.write("<p>The grade entered is not a valid number</p>")
+            gradeNumber = false;
+        }
+
+        while (gradeNumber == true) {
+            if (grade >= 0 && grade <= 59) {
+                letterGrade = "F";
+            }
+            else if (grade >= 60 && grade <= 69) {
+                letterGrade = "D";
+            }
+            else if (grade >= 70 && grade <= 79) {
+                letterGrade = "C";
+            }
+            else if (grade >= 80 && grade <= 89) {
+                letterGrade = "B";
+            }
+            else if (grade >= 90 && grade <= 100) {
+                letterGrade = "A";
+            }
+
+            document.write("<p>The letter grade of " + grade + " is " + letterGrade + ".</p>");
+            break;
+        }
+
+        //Excercise 3 (Multiple grades)
+
+        document.write("<h1>Excersise 3.1 (10 grades) Response</h1>")
+
+        var gradeList = [];
+        var gradeValue;
+        var total = 0;
+        var average = 0;
+
+        //Gets the grades from user
+        for (i = 0; i < 10; i++){
+            gradeValue = (parseInt(prompt("Please enter the [" + (i + 1) + "] grade now.")));
+            gradeList.push(gradeValue);
+        }
+
+        if (debugMode == 1) {
+            for (i = 0; i < gradeList.length; i++) {
+                document.write(gradeList[i] + ",");
+            }
+        }
+
+
+        //Converts the numbers to letter grades
+        for (i = 0; i < gradeList.length; i++) {
+            if (gradeList[i] >= 0 && gradeList[i] <= 59) {
+                document.write("F,");
+            }
+            else if (gradeList[i] >= 60 && gradeList[i] <= 69) {
+                document.write("D,");
+            }
+            else if (gradeList[i] >= 70 && gradeList[i] <= 79) {
+                document.write("C,");
+            }
+            else if (gradeList[i] >= 80 && gradeList[i] <= 89) {
+                document.write("B,");
+            }
+            else if (gradeList[i] >= 90 && gradeList[i] <= 100) {
+                document.write("A,");
+            }
+        
+        }
+
+        if (debugMode == 1) {
+            document.write("<p>The total of your grade is " + total + ".</p>");
+        }
+        if (debugMode == 1) {
+            for (i = 0; i < gradeList.length; i++) {
+                document.write(gradeList[i] + ",");
+            }
+        }
+
+        //Calculates the total to obtain the average
+        for (i = 0; i < gradeList.length; i++) {
+            total += gradeList[i];
+        }
+
+        average = total / gradeList.length;
+
+        document.write("<p>The Average of your grade is " + average + ".</p>");
+
+        //Example of the grade with a no predefined amount
+
+        document.write("<h1>Excersise 3 (undefined array amount) Response</h1>")
+
+        var gradeNoBound = [];
+        gradeValue = 0;
+        var counter = 1;
+        total = 0;
+
+        while (gradeValue >= 0) {
+            gradeValue = parseInt(prompt("Please enter the [" + counter + "] grade value (Enter a negative grade to exit)"));
+
+            if (gradeValue >= 0) {
+                gradeNoBound.push(gradeValue);
+            }
+            else if (gradeValue < 0 || isNan(gradeValue)) {
+                break;
+            }
+            counter++;
+        }
+
+        //Converts the numbers to letter grades
+        for (i = 0; i < gradeNoBound.length; i++) {
+            if (gradeNoBound[i] >= 0 && gradeNoBound[i] <= 59) {
+                document.write("F,");
+            }
+            else if (gradeNoBound[i] >= 60 && gradeNoBound[i] <= 69) {
+                document.write("D,");
+            }
+            else if (gradeNoBound[i] >= 70 && gradeNoBound[i] <= 79) {
+                document.write("C,");
+            }
+            else if (gradeNoBound[i] >= 80 && gradeNoBound[i] <= 89) {
+                document.write("B,");
+            }
+            else if (gradeNoBound[i] >= 90 && gradeNoBound[i] <= 100) {
+                document.write("A,");
+            }
+        
+        }
+
+        if (debugMode == 1) {
+            document.write("<p>The total of your grade is " + total + ".</p>");
+        }
+        if (debugMode == 1) {
+            for (i = 0; i < gradeNoBound.length; i++) {
+                document.write(gradeNoBound[i] + ",");
+            }
+        }
+
+        //Calculates the total to obtain the average
+        for (i = 0; i < gradeNoBound.length; i++) {
+            total = total + gradeNoBound[i];
+        }
+
+        average = total / gradeNoBound.length;
+
+        document.write("<p>The Average of your grade is " + average + ".</p>");
+    
+    </script>
+</head>
+<body>
+
+</body>
+</html>

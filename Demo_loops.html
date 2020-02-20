@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Loops</title>
+    <script type="text/javascript">
+        //Demonstration of loops and what they can do
+
+        for (var i = 0; i < 10; i++) {
+            document.write("<p style = \'font-size:" + (i + 1) + "pt\'>")
+            for (var j = 0; j < i + 1; j++) {
+                document.write("Hi");
+            }
+            document.write("</p>");
+        }
+
+        var k = 0, g = 0;
+        while (k < 10) {
+            document.write("<p style = \'font-size:" + (k + 1) + "pt\'>");
+            g = 0;
+            while (g < 10) {
+                document.write("Hi");
+                g++;
+            }
+            document.write("</p>");
+            k++;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
